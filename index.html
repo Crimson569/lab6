@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет сайта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Мой сайт</h1>
+        <button id="themeToggle">🌓 Тема</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="main">
+            <h2>Привет мир</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+            <section class="accordion">
+                <h2>Аккордеон</h2>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Раздел 1</button>
+                    <div class="accordion-body">
+                        <p>Содержимое первого раздела.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Раздел 2</button>
+                    <div class="accordion-body">
+                        <p>Содержимое второго раздела.</p>
+                        <img height="250px" width="auto"
+                             src="https://img.freepik.com/premium-photo/city-street-buildings-against-sky_1048944-24680887.jpg?semt=ais_hybrid&w=400&q=80"
+                             alt="Город" class="preview clickable">
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">Раздел 3</button>
+                    <div class="accordion-body">
+                        <p>Содержимое третьего раздела.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="sidebar">
+            <h3>Боковая панель</h3>
+            <p>Дополнительная информация или ссылки.</p>
+        </div>
+    </div>
+
+    <div id="images" style="display:flex; flex-wrap:wrap; justify-content:center;"></div>
+    <button id="loadImagesBtn">Загрузить изображения</button>
+
+    <section class="testimonials">
+        <h2>Отзывы наших клиентов</h2>
+
+        <div class="carousel">
+            <button class="carousel-btn prev">&#10094;</button>
+
+            <div class="carousel-track">
+                <div class="testimonial">
+                    <p>«Отличный сервис! Всё работает быстро и удобно.»</p>
+                    <h4>Анна Петрова</h4>
+                    <span>Клиент</span>
+                </div>
+
+                <div class="testimonial">
+                    <p>«Очень понравился дизайн и простота интерфейса. Рекомендую!»</p>
+                    <h4>Иван Смирнов</h4>
+                    <span>Предприниматель</span>
+                </div>
+
+                <div class="testimonial">
+                    <p>«Поддержка ответила моментально, решили вопрос за 5 минут!»</p>
+                    <h4>Мария Коваль</h4>
+                    <span>Постоянный пользователь</span>
+                </div>
+
+                <div class="testimonial">
+                    <p>«Я приятно удивлён скоростью и надёжностью. Молодцы!»</p>
+                    <h4>Алексей Орлов</h4>
+                    <span>Фрилансер</span>
+                </div>
+            </div>
+
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Мой сайт. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

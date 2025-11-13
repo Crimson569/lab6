@@ -1,0 +1,78 @@
+﻿/* Сброс */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:Calibri,sans-serif; display:flex; flex-direction:column; min-height:100vh; background:white; color:black; transition:0.3s; }
+header { background:blue; color:white; padding:20px; text-align:center; position:relative; }
+#themeToggle { position:absolute; top:20px; right:20px; background:#fff; border:none; color:black; padding:8px 14px; border-radius:8px; cursor:pointer; transition:0.3s; }
+#themeToggle:hover { background:#ddd; }
+nav { background:#333; }
+nav ul { display:flex; justify-content:center; list-style:none; padding:10px 0; }
+nav ul li { margin:0 20px; }
+nav ul li a { color:white; text-decoration:none; font-size:18px; }
+nav ul li a:hover { text-decoration:underline; }
+.content { display:grid; grid-template-columns:3fr 1fr; gap:20px; padding:20px; flex:1; }
+.content .main { padding:20px; background:gray; }
+.content .sidebar { padding:15px; background:#f4f4f4; }
+footer { background:#333; color:white; text-align:center; padding:10px; }
+
+/* Аккордеон */
+.accordion { margin-top:20px; }
+.accordion-header { width:100%; text-align:left; padding:15px; font-size:16px; background:#eee; border:none; cursor:pointer; transition:0.3s; }
+.accordion-header:hover { background:#ddd; }
+.accordion-body { max-height:0; overflow:hidden; background:#fafafa; transition:max-height 0.3s ease; padding:0 15px; }
+.accordion-body p { margin:10px 0; }
+.accordion-item.active .accordion-body { max-height:200px; padding:10px 15px; }
+
+/* Модалка */
+.modal { display:none; position:fixed; z-index:1000; padding-top:60px; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); }
+.modal-content { display:block; margin:auto; max-width:80%; max-height:80%; border-radius:10px; box-shadow:0 0 15px rgba(255,255,255,0.3); animation:zoomIn 0.3s ease; }
+.close { position:absolute; top:20px; right:40px; color:#fff; font-size:35px; font-weight:bold; cursor:pointer; transition:0.3s; }
+.close:hover { color:#bbb; }
+@keyframes zoomIn { from{transform:scale(0.7);opacity:0;} to{transform:scale(1);opacity:1;} }
+
+/* Кликабельные картинки */
+img.clickable { cursor:zoom-in; transition:transform 0.3s; }
+img.clickable:hover { transform:scale(1.05); }
+
+/* Тёмная тема */
+body.dark-theme { background:#121212; color:#e0e0e0; }
+body.dark-theme header { background:#1e1e1e; }
+body.dark-theme nav { background:#222; }
+body.dark-theme nav ul li a { color:#ddd; }
+body.dark-theme .content .main { background:#2a2a2a; }
+body.dark-theme .content .sidebar { background:#1f1f1f; }
+body.dark-theme footer { background:#1e1e1e; }
+body.dark-theme .accordion-header { background:#333; color:#eee; }
+body.dark-theme .accordion-body { background:#2a2a2a; }
+body.dark-theme #themeToggle { background:#333; color:#eee; }
+body.dark-theme #themeToggle:hover { background:#444; }
+
+/* Блок отзывов и карусель */
+.testimonials { text-align:center; padding:60px 20px; background:#f7f7f7; color:#333; position:relative; }
+.testimonials h2 { font-size:28px; margin-bottom:30px; }
+.carousel { position:relative; max-width:700px; margin:0 auto; overflow:hidden; }
+.carousel-track { display:flex; transition:transform 0.5s ease; }
+.testimonial { min-width:100%; padding:30px; background:white; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.testimonial p { font-size:18px; font-style:italic; margin-bottom:15px; }
+.testimonial h4 { font-size:20px; margin-bottom:5px; color:#007BFF; }
+.carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:#007BFF; color:white; border:none; padding:10px 16px; border-radius:50%; cursor:pointer; font-size:22px; }
+.carousel-btn:hover { background:#0056b3; }
+.carousel-btn.prev { left:10px; }
+.carousel-btn.next { right:10px; }
+body.dark-theme .testimonials { background:#1e1e1e; color:#e0e0e0; }
+body.dark-theme .testimonial { background:#2a2a2a; box-shadow:0 4px 10px rgba(255,255,255,0.05); }
+body.dark-theme .testimonial h4 { color:#4da3ff; }
+body.dark-theme .carousel-btn { background:#4da3ff; }
+body.dark-theme .carousel-btn:hover { background:#357fd4; }
+
+#loadImagesBtn { background:#007BFF; color:#fff; border:none; padding:10px 20px; font-size:16px; border-radius:8px; cursor:pointer; margin:20px auto; display:block; }
+#loadImagesBtn:hover { background:#0056b3; transform:scale(1.05); }
+#loadImagesBtn:active { transform:scale(0.98); }
+
+@media (max-width:768px) {
+    .content { grid-template-columns:1fr; }
+    nav ul { flex-direction:column; padding:10px 0; }
+    nav ul li { margin:10px 0; }
+    .carousel-btn.prev { left:10px; }
+    .carousel-btn.next { right:10px; }
+    .testimonial p { font-size:16px; }
+}
